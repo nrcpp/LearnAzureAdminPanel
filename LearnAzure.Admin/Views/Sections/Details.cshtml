@@ -1,0 +1,106 @@
+﻿@model LearnAzure.Admin.Section
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Section</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ExamId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExamId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PercentageFrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PercentageFrom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PercentageTo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PercentageTo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FullNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedAt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedAt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Version)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Version)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserAdded)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserAdded)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsComplete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsComplete)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "SectionsList", new { examId = Model.ExamId })
+</p>

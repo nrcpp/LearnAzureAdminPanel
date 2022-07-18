@@ -1,0 +1,73 @@
+﻿@model IEnumerable<LearnAzure.Admin.Section>
+
+@{ 
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    <input type="button" class="btn btn-primary" name="EditExam" style="width: 150px; margin-top: 20px; margin-bottom: 20px;" 
+           value="Add Section"
+           onclick="location.href='@Url.Action("Create", "Sections", new { examId = Model.First().ExamId })'">    
+</p>
+<table class="table">
+    <tr>
+        <th>
+            # Section Title
+        </th>
+        <th>
+            %, From-To
+        </th>
+        <th>
+            Categories List
+        </th>
+        <th>
+            User
+        </th>
+        <th>
+            Updated At
+        </th>
+        <th>
+            Is Complete
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.ActionLink(item.TitleAndNumber, "Details", "Sections", new { id = item.Id }, new { target = "_blank" })
+    </td>
+    <td>
+        @item.PercentageFrom-@item.PercentageTo %
+    </td>
+    <td>
+        @foreach (var cat in ViewBag.Categories)
+        {
+            if (cat.SectionId == item.Id)
+            {
+                @Html.ActionLink((string)cat.TitleAndNumber, "Details", "Categories", new { id = item.Id }, new { target = "_blank" });
+                @:<br />
+            }
+        }
+    </td>    
+    <td>
+        @Html.DisplayFor(modelItem => item.UserAdded)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.UpdatedAt)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.IsComplete)
+    </td>
+    <td>
+        @Html.ActionLink("Add Category", "Create", "Categories", new { id = item.Id }, new { @class = "link-success" }) |
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "link-dark" }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "link-danger" })
+    </td>
+</tr>
+}
+
+</table>
