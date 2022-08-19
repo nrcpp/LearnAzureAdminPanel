@@ -22,9 +22,6 @@ This project is a simple CMS to populate data for Learn Azure [mobile](https://l
 - Compile and run web-app in your local environment. You can use this admin panel to populate database with learning content. 
 
 ## Demo
-**https://admin.learnazure.app**
-
-**Also**
 
 You may check of how the output of Learn Azure Admin Panel uses in mobile app with >50,000 of users:
 
